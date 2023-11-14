@@ -1,7 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Roboto+Slab:wght@500&display=swap');
+
 :root {
 	--bg-color: #2f3556;
 	--text-color: #fef4e9;
 	--color-one: #f6b86d;
 	--color-two: #2ac6ea;
 	--color-three: #ed6673;
+}
+
+.App {
+	background-color: var(--bg-color);
+	color: var(--text-color);
+	font-family: 'Abel', sans-serif;
 }

@@ -1,0 +1,19 @@
+.header {
+	height: 5rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	padding-inline: 2rem;
+
+	& .title {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 1rem;
+
+		& h1 {
+			font-size: 2rem;
+			font-family: 'Roboto Slab', serif;
+		}
+	}
+}
