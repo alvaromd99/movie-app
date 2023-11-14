@@ -8,8 +8,14 @@ export default function Header() {
 				<MovieIcon />
 				<h1>Movies Search</h1>
 			</div>
-			<form>
-				<input type='text' placeholder='Avengers, Star Wars...' />
+			<form className='form' id='search'>
+				<div className='input-bg'>
+					<input
+						type='text'
+						name='movie'
+						placeholder='Avengers, Star Wars...'
+					/>
+				</div>
 				<button type='submit'>SEARCH</button>
 			</form>
 		</div>

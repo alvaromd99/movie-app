@@ -1,5 +1,10 @@
+:root {
+	--header-w: 7rem;
+	--header-fs: 3rem;
+}
+
 .header {
-	height: 5rem;
+	height: var(--header-w);
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
@@ -11,9 +16,58 @@
 		justify-content: center;
 		gap: 1rem;
 
+		& .svg-movie-icon {
+			width: var(--header-fs);
+			height: var(--header-fs);
+
+			& path {
+				fill: var(--color-one);
+			}
+		}
+
 		& h1 {
-			font-size: 2rem;
+			font-size: var(--header-fs);
 			font-family: 'Roboto Slab', serif;
 		}
+	}
+}
+
+.form {
+	display: flex;
+	gap: 1rem;
+
+	& .input-bg {
+		width: 14rem;
+		height: 2rem;
+		background-color: var(--color-three);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 5px;
+
+		& input {
+			width: calc(14rem - 2px);
+			height: calc(2rem - 2px);
+			border: 1px solid transparent;
+			padding: 2px 2px 2px 5px;
+			border-radius: 4px;
+		}
+
+		& input:focus {
+			outline-color: var(--bg-color);
+			outline-offset: -1px;
+		}
+	}
+
+	& button {
+		width: 4rem;
+		height: 2rem;
+		background-color: var(--color-one);
+		color: var(--bg-color);
+		border-radius: 4px;
+		border: none;
+		outline: none;
+		padding: 0.2rem;
+		font-weight: bold;
 	}
 }
