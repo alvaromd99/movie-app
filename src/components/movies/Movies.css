@@ -1,3 +1,9 @@
 .movies-cont {
 	background-color: var(--bg-color);
+	padding: 2rem 6rem 2rem 6rem;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+	place-items: center;
+	row-gap: 3rem;
+	column-gap: 2rem;
 }
