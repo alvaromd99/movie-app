@@ -1,4 +1,4 @@
-export function MovieIcon(props) {
+export default function MovieIcon(props) {
 	return (
 		<svg
 			className='svg-movie-icon'

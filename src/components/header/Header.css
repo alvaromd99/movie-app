@@ -5,10 +5,12 @@
 
 .header {
 	height: var(--header-w);
+	background-color: var(--bg-color);
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
 	padding-inline: 2rem;
+	margin-bottom: 1px;
 
 	& .title {
 		display: flex;

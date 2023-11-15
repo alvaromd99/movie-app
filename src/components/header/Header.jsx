@@ -1,5 +1,5 @@
-import { MovieIcon } from '../icons/MovieIcon'
 import './Header.css'
+import MovieIcon from '../../icons/MovieIcon'
 
 export default function Header() {
 	return (
