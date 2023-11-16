@@ -72,3 +72,9 @@
 		font-weight: bold;
 	}
 }
+
+.error-msg {
+	position: absolute;
+	color: var(--color-three);
+	margin-top: 5px;
+}

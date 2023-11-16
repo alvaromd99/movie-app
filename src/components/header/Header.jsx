@@ -1,7 +1,7 @@
 import './Header.css'
 import MovieIcon from '../../icons/MovieIcon'
 
-export default function Header({ query, handleChange }) {
+export default function Header({ query, handleChange, error }) {
 	/* const deferredQuery = useDeferredValue(query) */
 
 	const handleSubmit = (event) => {
@@ -14,18 +14,21 @@ export default function Header({ query, handleChange }) {
 				<MovieIcon />
 				<h1>Movies Search</h1>
 			</div>
-			<form onSubmit={handleSubmit} className='form' id='search'>
-				<div className='input-bg'>
-					<input
-						value={query}
-						onChange={handleChange}
-						type='text'
-						name='movieQuery'
-						placeholder='Avengers, Star Wars...'
-					/>
-				</div>
-				<button type='submit'>SEARCH</button>
-			</form>
+			<div>
+				<form onSubmit={handleSubmit} className='form' id='search'>
+					<div className='input-bg'>
+						<input
+							value={query}
+							onChange={handleChange}
+							type='text'
+							name='movieQuery'
+							placeholder='Avengers, Star Wars...'
+						/>
+					</div>
+					<button type='submit'>SEARCH</button>
+				</form>
+				{error && <p className='error-msg'>{`* ${error}`}</p>}
+			</div>
 		</div>
 	)
 }

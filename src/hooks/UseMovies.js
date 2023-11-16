@@ -11,5 +11,6 @@ export function UseMovies() {
 		type: m.Type,
 		poster: m.Poster,
 	}))
+
 	return { movies: mappedMovies }
 }
