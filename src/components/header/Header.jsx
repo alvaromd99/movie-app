@@ -16,7 +16,7 @@ export default function Header({ query, handleChange, error }) {
 			</div>
 			<div>
 				<form onSubmit={handleSubmit} className='form' id='search'>
-					<div className='input-bg'>
+					<div className={`input-bg ${error ? 'wrong' : ''} `}>
 						<input
 							value={query}
 							onChange={handleChange}

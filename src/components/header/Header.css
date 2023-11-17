@@ -40,7 +40,7 @@
 	& .input-bg {
 		width: 14rem;
 		height: 2rem;
-		background-color: var(--color-three);
+		background-color: var(--text-color);
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -55,9 +55,12 @@
 		}
 
 		& input:focus {
-			outline-color: var(--bg-color);
-			outline-offset: -1px;
+			outline: none;
 		}
+	}
+
+	& .input-bg.wrong {
+		background-color: var(--color-three);
 	}
 
 	& button {
