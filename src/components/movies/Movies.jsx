@@ -1,12 +1,10 @@
 import './Movies.css'
 import MovieCard from './MovieCard'
-import { UseMovies } from '../../hooks/UseMovies'
 
-export default function Movies() {
-	const { movies: mappedMovies } = UseMovies()
+export default function Movies({ movies }) {
 	return (
 		<div className='movies-cont'>
-			{mappedMovies.map((movie) => (
+			{movies.map((movie) => (
 				<MovieCard key={movie.id} movie={movie} />
 			))}
 		</div>
