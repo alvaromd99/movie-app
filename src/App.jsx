@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './App.css'
 import Header from './components/header/Header'
 import Movies from './components/movies/Movies'
@@ -7,7 +6,6 @@ import { UseMoviesDelete } from './hooks/UseMoviesDelete'
 
 function App() {
 	const { query, handleChange, error } = UseInput()
-	const [movies, setMovies] = useState([])
 
 	const { movies: mappedMovies } = UseMoviesDelete()
 
