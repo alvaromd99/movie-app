@@ -20,6 +20,11 @@ export default function UseInput() {
 			return
 		}
 
+		if (query === '') {
+			setError(null)
+			return
+		}
+
 		if (query.length < 3) {
 			setError('Use more that 3 characters to make a search.')
 			return

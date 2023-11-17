@@ -1,7 +1,8 @@
 import { API_KEY as key } from '../api-key'
 
-export const searchMovies = async (query) => {
+export const searchMovies = async ({ query }) => {
 	if (query === '') return
+	console.log('Fetching.......................')
 	try {
 		const response = await fetch(
 			`https://www.omdbapi.com/?apikey=${key}&s=${query}`

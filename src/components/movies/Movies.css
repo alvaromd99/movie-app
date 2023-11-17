@@ -7,3 +7,14 @@
 	row-gap: 3rem;
 	column-gap: 2rem;
 }
+
+.no-result-cont {
+	background-color: var(--bg-color);
+	min-height: 100vh;
+	text-align: center;
+
+	& p {
+		padding: 4rem;
+		font-size: 2rem;
+	}
+}

@@ -1,11 +1,10 @@
 import './Header.css'
 import MovieIcon from '../../icons/MovieIcon'
 
-export default function Header({ query, handleChange, error }) {
-	/* const deferredQuery = useDeferredValue(query) */
-
+export default function Header({ query, handleChange, getMovies, error }) {
 	const handleSubmit = (event) => {
 		event.preventDefault()
+		getMovies()
 	}
 
 	return (
