@@ -40,17 +40,26 @@
 	& .input-bg {
 		width: 14rem;
 		height: 2rem;
-		background-color: var(--text-color);
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		border-radius: 5px;
 
+		/* Make the bg fill */
+		background-image: linear-gradient(
+			to right,
+			var(--color-three) 0%,
+			var(--color-three) 0%
+		);
+		background-size: 0% 100%;
+		background-repeat: no-repeat;
+		transition: background-size 0.5s ease-in;
+
 		& input {
-			width: calc(14rem - 2px);
-			height: calc(2rem - 2px);
+			width: calc(14rem - 4px);
+			height: calc(2rem - 4px);
 			border: 1px solid transparent;
-			padding: 2px 2px 2px 5px;
+			padding-left: 4px;
 			border-radius: 4px;
 		}
 
@@ -60,7 +69,7 @@
 	}
 
 	& .input-bg.wrong {
-		background-color: var(--color-three);
+		background-size: 100% 100%;
 	}
 
 	& button {

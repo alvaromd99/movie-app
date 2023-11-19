@@ -1,4 +1,4 @@
-import { API_KEY as key } from '../api-key'
+import { API_KEY as key } from '../mocks/api-key'
 
 export const searchMovies = async ({ query }) => {
 	if (query === '') return
