@@ -2,7 +2,7 @@ import { API_KEY as key } from '../mocks/api-key'
 
 export const searchMovies = async ({ query }) => {
 	if (query === '') return
-	console.log('Fetching.......................')
+
 	try {
 		const response = await fetch(
 			`https://www.omdbapi.com/?apikey=${key}&s=${query}`
@@ -13,6 +13,7 @@ export const searchMovies = async ({ query }) => {
 		const data = await response.json()
 
 		const movies = data.Search
+
 		// Avoid using apis names
 		return movies?.map((m) => ({
 			title: m.Title,
