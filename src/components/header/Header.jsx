@@ -1,7 +1,18 @@
 import './Header.css'
 import MovieIcon from '../../icons/MovieIcon'
+import { useState } from 'react'
 
 export default function Header({ query, handleChange, getMovies, error }) {
+	const [isFocused, setIsFocused] = useState(false)
+
+	const handleFocus = () => {
+		setIsFocused(true)
+	}
+
+	const handleBlur = () => {
+		setIsFocused(false)
+	}
+
 	const handleSubmit = (event) => {
 		event.preventDefault()
 		getMovies()
@@ -15,10 +26,15 @@ export default function Header({ query, handleChange, getMovies, error }) {
 			</div>
 			<div>
 				<form onSubmit={handleSubmit} className='form' id='search'>
-					<div className={`input-bg ${error ? 'wrong' : ''} `}>
+					<div
+						className={`input-bg ${error ? 'wrong' : ''} ${
+							isFocused ? 'focus' : ''
+						}`}>
 						<input
 							value={query}
 							onChange={handleChange}
+							onFocus={handleFocus}
+							onBlur={handleBlur}
 							type='text'
 							name='movieQuery'
 							placeholder='Avengers, Star Wars...'
