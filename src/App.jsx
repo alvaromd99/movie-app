@@ -7,9 +7,13 @@ import UseInput from './hooks/UseInput'
 import { UseMovies } from './hooks/UseMovies'
 
 function App() {
-	const [sorted, setSorted] = useState()
+	const [sorted, setSorted] = useState(false)
 	const { query, handleChange, error } = UseInput()
-	const { responseMovies, loading, getMovies } = UseMovies({ query, sorted })
+	const { movies, loading, getMovies } = UseMovies({ query, sorted })
+
+	const handleSorted = () => {
+		setSorted(!sorted)
+	}
 
 	return (
 		<div className='App'>
@@ -18,8 +22,10 @@ function App() {
 				handleChange={handleChange}
 				getMovies={getMovies}
 				error={error}
+				sorted={sorted}
+				handleSorted={handleSorted}
 			/>
-			{loading === true ? <Loader /> : <Movies movies={responseMovies} />}
+			{loading === true ? <Loader /> : <Movies movies={movies} />}
 		</div>
 	)
 }

@@ -1,7 +1,7 @@
 import './MovieCard.css'
 
 export default function MovieCard({ movie }) {
-	const needWrapped = movie.title.length > 24
+	const needWrapped = movie.title.length > 26
 
 	return (
 		<div className={`card ${needWrapped ? 'small' : 'normal'}`}>

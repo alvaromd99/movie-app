@@ -2,7 +2,14 @@ import './Header.css'
 import MovieIcon from '../../icons/MovieIcon'
 import { useState } from 'react'
 
-export default function Header({ query, handleChange, getMovies, error }) {
+export default function Header({
+	query,
+	handleChange,
+	getMovies,
+	error,
+	sorted,
+	handleSorted,
+}) {
 	const [isFocused, setIsFocused] = useState(false)
 
 	const handleFocus = () => {
@@ -40,7 +47,12 @@ export default function Header({ query, handleChange, getMovies, error }) {
 							placeholder='Avengers, Star Wars...'
 						/>
 					</div>
-					<input type='checkbox' name='sort-check' />
+					<input
+						type='checkbox'
+						name='sort-check'
+						onChange={handleSorted}
+						checked={sorted}
+					/>
 					<button type='submit'>SEARCH</button>
 				</form>
 				{error && <p className='error-msg'>{`* ${error}`}</p>}
