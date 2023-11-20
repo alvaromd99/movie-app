@@ -40,6 +40,7 @@ export default function Header({ query, handleChange, getMovies, error }) {
 							placeholder='Avengers, Star Wars...'
 						/>
 					</div>
+					<input type='checkbox' name='sort-check' />
 					<button type='submit'>SEARCH</button>
 				</form>
 				{error && <p className='error-msg'>{`* ${error}`}</p>}

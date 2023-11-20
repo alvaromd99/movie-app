@@ -10,8 +10,8 @@
 }
 
 .no-result-cont {
+	min-height: calc((100vh - 7rem) - 1px);
 	background-color: var(--bg-color);
-	min-height: 100vh;
 	text-align: center;
 
 	& p {
