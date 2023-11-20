@@ -22,7 +22,7 @@ export default function Header({
 
 	const handleSubmit = (event) => {
 		event.preventDefault()
-		getMovies()
+		getMovies({ query })
 	}
 
 	return (
