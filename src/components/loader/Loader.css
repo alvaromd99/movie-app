@@ -1,5 +1,5 @@
 .loader-cont {
-	min-height: calc((100vh - 7rem) - 1px);
+	min-height: calc((100vh - 7rem) - 2px);
 	background-color: var(--bg-color);
 	display: flex;
 	justify-content: center;
