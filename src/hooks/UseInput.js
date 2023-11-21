@@ -3,14 +3,19 @@ import { useState, useEffect, useRef } from 'react'
 export default function UseInput() {
 	const [query, setQuery] = useState('')
 	const [error, setError] = useState(null)
+	const [sorted, setSorted] = useState(false)
 	const isFirstInput = useRef(true)
+
+	const handleSorted = () => {
+		setSorted(!sorted)
+	}
 
 	const handleChange = (event) => {
 		const newQuery = event.target.value
 		// Avoid using space a the first space
 		if (newQuery.startsWith(' ')) return
 
-		setQuery(event.target.value)
+		setQuery(newQuery)
 	}
 
 	useEffect(() => {
@@ -32,5 +37,5 @@ export default function UseInput() {
 		setError(null)
 	}, [query])
 
-	return { query, handleChange, error }
+	return { query, handleChange, error, sorted, handleSorted }
 }

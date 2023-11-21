@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './App.css'
 import Header from './components/header/Header'
 import Loader from './components/loader/Loader'
@@ -7,13 +6,8 @@ import UseInput from './hooks/UseInput'
 import { UseMovies } from './hooks/UseMovies'
 
 function App() {
-	const [sorted, setSorted] = useState(false)
-	const { query, handleChange, error } = UseInput()
+	const { query, handleChange, error, sorted, handleSorted } = UseInput()
 	const { movies, loading, getMovies } = UseMovies({ query, sorted })
-
-	const handleSorted = () => {
-		setSorted(!sorted)
-	}
 
 	return (
 		<div className='App'>
@@ -25,7 +19,11 @@ function App() {
 				sorted={sorted}
 				handleSorted={handleSorted}
 			/>
-			{loading === true ? <Loader /> : <Movies movies={movies} />}
+			{loading === true && !error ? (
+				<Loader />
+			) : (
+				<Movies movies={movies} error={error} />
+			)}
 		</div>
 	)
 }

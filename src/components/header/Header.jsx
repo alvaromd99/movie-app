@@ -1,6 +1,8 @@
 import './Header.css'
 import MovieIcon from '../../icons/MovieIcon'
 import { useState } from 'react'
+import { useCallback } from 'react'
+import debounce from 'just-debounce-it'
 
 export default function Header({
 	query,
@@ -25,6 +27,20 @@ export default function Header({
 		getMovies({ query })
 	}
 
+	// eslint-disable-next-line react-hooks/exhaustive-deps
+	const debounceGetMovies = useCallback(
+		debounce((query) => {
+			console.log('query: ' + query)
+			getMovies({ query })
+		}, 500),
+		[]
+	)
+
+	const handleInputChange = (event) => {
+		handleChange(event)
+		debounceGetMovies(query)
+	}
+
 	return (
 		<div className='header'>
 			<div className='title'>
@@ -39,7 +55,7 @@ export default function Header({
 						}`}>
 						<input
 							value={query}
-							onChange={handleChange}
+							onChange={handleInputChange}
 							onFocus={handleFocus}
 							onBlur={handleBlur}
 							type='text'
