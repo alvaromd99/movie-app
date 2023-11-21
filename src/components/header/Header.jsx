@@ -17,7 +17,6 @@ export default function Header({
 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	const debounceGetMovies = useCallback(
 		debounce((query) => {
-			console.log('query: ' + query)
 			getMovies({ query })
 		}, 500),
 		[]
@@ -38,7 +37,7 @@ export default function Header({
 
 	const handleInputChange = (event) => {
 		const newQuery = event.target.value
-		handleChange(event)
+		handleChange(newQuery)
 		debounceGetMovies(newQuery)
 	}
 

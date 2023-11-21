@@ -10,8 +10,7 @@ export default function UseInput() {
 		setSorted(!sorted)
 	}
 
-	const handleChange = (event) => {
-		const newQuery = event.target.value
+	const handleChange = (newQuery) => {
 		// Avoid using space a the first space
 		if (newQuery.startsWith(' ')) return
 
