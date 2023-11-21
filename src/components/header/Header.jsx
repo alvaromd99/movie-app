@@ -14,6 +14,15 @@ export default function Header({
 }) {
 	const [isFocused, setIsFocused] = useState(false)
 
+	// eslint-disable-next-line react-hooks/exhaustive-deps
+	const debounceGetMovies = useCallback(
+		debounce((query) => {
+			console.log('query: ' + query)
+			getMovies({ query })
+		}, 500),
+		[]
+	)
+
 	const handleFocus = () => {
 		setIsFocused(true)
 	}
@@ -27,18 +36,10 @@ export default function Header({
 		getMovies({ query })
 	}
 
-	// eslint-disable-next-line react-hooks/exhaustive-deps
-	const debounceGetMovies = useCallback(
-		debounce((query) => {
-			console.log('query: ' + query)
-			getMovies({ query })
-		}, 500),
-		[]
-	)
-
 	const handleInputChange = (event) => {
+		const newQuery = event.target.value
 		handleChange(event)
-		debounceGetMovies(query)
+		debounceGetMovies(newQuery)
 	}
 
 	return (
@@ -61,6 +62,7 @@ export default function Header({
 							type='text'
 							name='movieQuery'
 							placeholder='Avengers, Star Wars...'
+							autoComplete='off'
 						/>
 					</div>
 					<input
